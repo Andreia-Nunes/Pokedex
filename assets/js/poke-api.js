@@ -11,6 +11,11 @@ function convertPokemonDetailedToPokemonModel(pokemonDetailed){
     pokemonModel.mainType = pokemonModel.types[0];
     pokemonModel.photo = pokemonDetailed.sprites.other.dream_world.front_default;
 
+    pokemonModel.baseExperience = pokemonDetailed.base_experience;
+    pokemonModel.height = pokemonDetailed.height;
+    pokemonModel.weight = pokemonDetailed.weight;
+    pokemonModel.abilities = pokemonDetailed.abilities.map((abilitieObject) => abilitieObject.ability.name);
+
     return pokemonModel;
 }
 
